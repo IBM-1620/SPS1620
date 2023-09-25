@@ -7,14 +7,18 @@ package SPS1620;
  *
  *  To recreate the experience (visual, auditory, tactile, visceral) of running historic software on a 1960s-era computer.
  *
- *   Dave Babcock     - project lead, software, library
- *   John M. Bohn Jr. - software
- *   David Brock      - CHM sponsor
- *   Steve Casner     - hardware, software
- *   Joe Fredrick     - hardware, firmware
- *   Len Shustek      - CHM advisor
- *   Dag Spicer       - CHM advisor
- *   David Wise       - IBM 1620 expert
+ *    Dave Babcock     - project lead, software, library
+ *    John M. Bohn Jr. - software
+ *    David Brock      - CHM sponsor
+ *    Steve Casner     - hardware, software
+ *    Joe Fredrick     - hardware, firmware
+ *    Len Shustek      - CHM advisor
+ *    Dag Spicer       - CHM advisor
+ *    David Wise       - IBM 1620 expert
+ *
+ *  Revision History:
+ *
+ *     1.00   9/29/2023   DJB   Initial version.
  */
 
 public class SPSMain {

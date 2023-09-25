@@ -69,7 +69,7 @@ public class SPSData {
 	
 	public static final Pattern PATTERN_FREEFORM = Pattern.compile("^(\\S*)\\s+(\\S+)(\\s(.*))?$");
 	public static final Pattern PATTERN_SPLIT    = Pattern.compile(",");
-	public static final Pattern PATTERN_LINE     = Pattern.compile("^[ .)+$*\\-/,(=@A-Z0-9]*$");
+	public static final Pattern PATTERN_LINE     = Pattern.compile("^[ .\\)+\\$*\\-/,\\(=@A-Z0-9\\]\\|\\!\\}\"~]*$");
 	public static final Pattern PATTERN_LABEL    = Pattern.compile("^[A-Z0-9=/@.]{1,6}$");
 	public static final Pattern PATTERN_LABELX   = Pattern.compile("^[A-Z0-9=@.]{1,6}$");
 	public static final Pattern PATTERN_SYMBOL   = Pattern.compile("^[A-Z0-9=/@.]{1,6}$");
