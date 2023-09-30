@@ -356,7 +356,7 @@ public class SPSStatement {
 		statementTable.put("63",   new SPSStatement(StatementClass.IMPERATIVE,  StatementType.INSTRUCTION, SPSData.SystemType.MODEL_2, 63,  3, P_REF_EVEN, Q_REFERENCE, StatementListing.INSTRUCTION));
 		statementTable.put("64",   new SPSStatement(StatementClass.IMPERATIVE,  StatementType.INSTRUCTION, SPSData.SystemType.MODEL_2, 64,  3, P_REF_EVEN, Q_IMM_INDEX, StatementListing.INSTRUCTION));
 		statementTable.put("65",   new SPSStatement(StatementClass.IMPERATIVE,  StatementType.INSTRUCTION, SPSData.SystemType.MODEL_2, 65,  3, P_REF_EVEN, Q_REFERENCE, StatementListing.INSTRUCTION));
-		statementTable.put("66",  new SPSStatement(StatementClass.IMPERATIVE,  StatementType.INSTRUCTION, SPSData.SystemType.MODEL_2, 66,  3, P_REF_EVEN, Q_IMM_INDEX, StatementListing.INSTRUCTION));
+		statementTable.put("66",   new SPSStatement(StatementClass.IMPERATIVE,  StatementType.INSTRUCTION, SPSData.SystemType.MODEL_2, 66,  3, P_REF_EVEN, Q_IMM_INDEX, StatementListing.INSTRUCTION));
 		statementTable.put("67",   new SPSStatement(StatementClass.IMPERATIVE,  StatementType.INSTRUCTION, SPSData.SystemType.MODEL_2, 67,  3, P_REF_EVEN, Q_REFERENCE, StatementListing.INSTRUCTION));
 		statementTable.put("70",   new SPSStatement(StatementClass.IMPERATIVE,  StatementType.INSTRUCTION, SPSData.SystemType.MODEL_2, 70,  3, P_REFERENCE, Q_REFERENCE, StatementListing.INSTRUCTION));
 		statementTable.put("71",   new SPSStatement(StatementClass.IMPERATIVE,  StatementType.INSTRUCTION, SPSData.SystemType.ANY,     71,  3, P_REFERENCE, Q_REFERENCE, StatementListing.INSTRUCTION));
@@ -375,6 +375,10 @@ public class SPSStatement {
 	
 	public static SPSStatement Get(String operation) {
 		return statementTable.get(operation);
+	}
+
+	public static SPSStatement Get(Integer opCode) {
+		return new SPSStatement(StatementClass.IMPERATIVE, StatementType.INSTRUCTION, SPSData.SystemType.ANY, opCode, 3, P_REFERENCE, Q_REFERENCE, StatementListing.INSTRUCTION);
 	}
 
 	public static void Process() {

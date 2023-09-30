@@ -532,24 +532,11 @@ public class SPSOutput {
 		String str = SPSData.inputLine;
 		String str2;
 		if (SPSData.sourceFormat == SPSData.SourceFormat.FIXED) {
-			if ((SPSData.inputStatement.Listing == SPSStatement.StatementListing.UNKNOWN) ||
-				(SPSData.inputStatement.Listing == SPSStatement.StatementListing.COMMENT)) {
-				if (str.length() < 76) {
-					str2 = String.format("%-5s %s", SPSUtility.Substring(str, 0, 5), SPSUtility.Substring(str, 5));
-				} else {
-					str2 = String.format("%-5s %-70s  %s", SPSUtility.Substring(str, 0, 5), SPSUtility.Substring(str, 5, 75),
-										 SPSUtility.Substring(str, 75));
-				}
-			} else if (SPSData.inputStatement.Listing == SPSStatement.StatementListing.CONTROL) {
-				if (str.length() < 76) {
-					str2 = String.format("%-5s  %s", SPSUtility.Substring(str, 0, 5), SPSUtility.Substring(str, 5));
-				} else {
-					str2 = String.format("%-5s  %-70s  %s", SPSUtility.Substring(str, 0, 5), SPSUtility.Substring(str, 5, 75),
-										 SPSUtility.Substring(str, 75));
-				}
+			if (SPSData.inputStatement.Listing == SPSStatement.StatementListing.COMMENT) {
+					str2 = String.format("%-5s %-70s  %s", SPSUtility.Substring(str, 0, 5), SPSUtility.Substring(str, 5, 75), SPSUtility.Substring(str, 75));
 			} else {
-				str2 = String.format("%-5s %-6s %-4s %s", SPSUtility.Substring(str, 0, 5), SPSUtility.Substring(str, 5, 11),
-														  SPSUtility.Substring(str, 11, 15), SPSUtility.Substring(str, 15));
+				str2 = String.format("%-5s %-6s %-4s %s", SPSUtility.Substring(str, 0, 5), SPSUtility.Substring(str, 5, 11), SPSUtility.Substring(str, 11, 15),
+									 SPSUtility.Substring(str, 15));
 			}
 		} else {
 			str2 = SPSData.inputLine;

@@ -127,13 +127,26 @@ public class SPSInput {
 		if (!SPSUtility.IsEmpty(SPSData.inputOperation)) {
 			SPSData.inputStatement = SPSStatement.Get(SPSData.inputOperation);
 			if (SPSData.inputStatement == null) {
-			    char op1 = SPSUtility.CharAt(SPSData.inputOperation, 0);
-			    if ((op1 >= '0') && (op1 <= '9')) {
-					SPSOutput.ReportError("invalid numeric operation code (" + SPSData.inputOperation + ")");
+				char op1 = SPSUtility.CharAt(SPSData.inputOperation, 0);
+				if ((op1 >= '0') && (op1 <= '9') && (SPSData.inputOperation.length() > 1)) {
+					String op = Character.toString(op1) + Character.toString(SPSData.opCodeChar[SPSUtility.CharAt(SPSData.inputOperation, 1)]);
+					SPSData.inputStatement = SPSStatement.Get(op);
+					if (SPSData.inputStatement == null) {
+						int opCode;
+						try {
+							opCode = Integer.parseInt(SPSData.inputOperation);
+						} catch (NumberFormatException ex) {
+							opCode = 0;
+						}
+						SPSOutput.ReportWarning("invalid numeric operation code (" + SPSData.inputOperation + ")");
+						SPSData.inputStatement = SPSStatement.Get(opCode);
+					} else if ((SPSData.inputStatement.Model == SPSData.SystemType.MODEL_2) && (SPSData.systemType != SPSData.SystemType.MODEL_2)) {
+						SPSOutput.ReportError("model 2 instruction (" + SPSData.inputOperation + ")");
+					}
 				} else {
 					SPSOutput.ReportError("invalid operation (" + SPSData.inputOperation + ")");
+					SPSData.inputStatement = SPSStatement.Get("????");
 				}
-				SPSData.inputStatement = SPSStatement.Get("????");
 			} else if ((SPSData.inputStatement.Model == SPSData.SystemType.MODEL_2) && (SPSData.systemType != SPSData.SystemType.MODEL_2)) {
 				SPSOutput.ReportError("model 2 instruction (" + SPSData.inputOperation + ")");
 			}
