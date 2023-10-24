@@ -19,6 +19,7 @@ package SPS1620;
  *  Revision History:
  *
  *     1.00   9/29/2023   DJB   Initial version.
+ *     1.01  10/23/2023   DJB   Correct indirect addresses in DSA.
  */
 
 public class SPSMain {

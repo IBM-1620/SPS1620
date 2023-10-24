@@ -26,7 +26,7 @@ public class SPSData {
 
 	// Constants
 	
-	public static final String VERSION = "1.00";
+	public static final String VERSION = "1.01";
 	
 	public static final int SIZE_OP_TABLE     = 400;
 	public static final int SIZE_SOURCE_TABLE = 16;

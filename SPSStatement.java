@@ -730,7 +730,7 @@ public class SPSStatement {
 					SPSData.value = new byte[len];
 					pos = 4;
 					for (int i = 0; i < SPSData.inputOperand.length; ++i) {
-						SPSValue.SetField(pos, 5, true, EvalOperand(SPSData.inputOperand[i], last, SPSData.indexOk, false, StatementCheck.ADDRESS));
+						SPSValue.SetField(pos, 5, true, EvalOperand(SPSData.inputOperand[i], last, SPSData.indexOk, false, StatementCheck.REFERENCE));
 						SPSValue.SetIndexFlags(pos);
 						pos += 5;
 					}
