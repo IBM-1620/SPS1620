@@ -91,6 +91,8 @@ public class SPSValue {
 			int val = value.charAt(pos2--);
 			if ((val >= '0') && (val <= '9')) {
 				SPSData.value[pos--] = (byte)(val - '0');
+			} else if (val == ']') {
+				SPSData.value[pos--] = (byte)(0 | SPSData.MASK_FLAG);
 			} else {
 				SPSData.value[pos--] = (byte)(val - 'I' | SPSData.MASK_FLAG);
 			}

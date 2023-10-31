@@ -20,6 +20,7 @@ package SPS1620;
  *
  *     1.00   9/29/2023   DJB   Initial version.
  *     1.01  10/23/2023   DJB   Correct indirect addresses in DSA.
+ *     1.02  10/31/2023   DJB   Correct flagged zero in DSC and add ']' to DAC.
  */
 
 public class SPSMain {
