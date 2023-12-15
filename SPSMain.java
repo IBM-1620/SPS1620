@@ -3,7 +3,7 @@ package SPS1620;
 /*
  *  SPSMain.java - main program and command-line processing
  *
- *  IBM 1620 Jr Project, Computer History Museum, 2017-2018
+ *  IBM 1620 Jr Project, Computer History Museum, 2017-2023
  *
  *  To recreate the experience (visual, auditory, tactile, visceral) of running historic software on a 1960s-era computer.
  *
@@ -18,9 +18,10 @@ package SPS1620;
  *
  *  Revision History:
  *
- *     1.00   9/29/2023   DJB   Initial version.
+ *     1.00   9/29/2023   DJB   Initial release version.
  *     1.01  10/23/2023   DJB   Correct indirect addresses in DSA.
  *     1.02  10/31/2023   DJB   Correct flagged zero in DSC and add ']' to DAC.
+ *     1.03  12/15/2023   DJB   Correct zero-length data abort.
  */
 
 public class SPSMain {

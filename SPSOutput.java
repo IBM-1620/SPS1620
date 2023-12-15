@@ -3,7 +3,7 @@ package SPS1620;
 /*
  *  SPSOutput.java - output routines for listing, punched card, paper tape, and core memory files
  *
- *  IBM 1620 Jr Project, Computer History Museum, 2017-2018
+ *  IBM 1620 Jr Project, Computer History Museum, 2017-2023
  *
  *  To recreate the experience (visual, auditory, tactile, visceral) of running historic software on a 1960s-era computer.
  *
@@ -247,7 +247,7 @@ public class SPSOutput {
 			
 			case DATA:
 				int addr = SPSData.address;
-				int len = SPSData.value.length;
+				int len = (SPSData.value != null) ? SPSData.value.length : 0;
 				if (len > 0) {
 					for (int i = 0; i < len; i += 20) {
 						String value = "";

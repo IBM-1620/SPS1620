@@ -3,7 +3,7 @@ package SPS1620;
 /*
  *  SPSValue.java - support routines for statement value
  *
- *  IBM 1620 Jr Project, Computer History Museum, 2017-2018
+ *  IBM 1620 Jr Project, Computer History Museum, 2017-2023
  *
  *  To recreate the experience (visual, auditory, tactile, visceral) of running historic software on a 1960s-era computer.
  *
