@@ -3,7 +3,7 @@ package SPS1620;
 /*
  *  SPSPasses.java - pass 1 & 2 processing
  *
- *  IBM 1620 Jr Project, Computer History Museum, 2017-2023
+ *  IBM 1620 Jr Project, Computer History Museum, 2017-2024
  *
  *  To recreate the experience (visual, auditory, tactile, visceral) of running historic software on a 1960s-era computer.
  *
@@ -28,8 +28,8 @@ public class SPSPasses {
 		SPSData.lineCount = 0;
 		SPSData.errorCount = 0;
 		SPSData.warningCount = 0;
-		SPSData.addressCounter = 402;
-		SPSData.lastAddress = 0;
+		SPSData.addressCounter = SPSData.initialAddressCounter;
+		SPSData.lastAddress = SPSData.initialAddressCounter - 1;
 		SPSData.symbolHead = ' ';
 		SPSData.dendStatus = SPSData.DendStatus.NOT_SEEN;
 		
@@ -64,8 +64,8 @@ public class SPSPasses {
 		SPSData.lineCount = 0;
 		SPSData.errorCount = 0;
 		SPSData.warningCount = 0;
-		SPSData.addressCounter = 402;
-		SPSData.lastAddress = 0;
+		SPSData.addressCounter = SPSData.initialAddressCounter;
+		SPSData.lastAddress = SPSData.initialAddressCounter - 1;
 		SPSData.symbolHead = ' ';
 		SPSData.dendStatus = SPSData.DendStatus.NOT_SEEN;
 		

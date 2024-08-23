@@ -3,7 +3,7 @@ package SPS1620;
 /*
  *  java - statement definition and processing
  *
- *  IBM 1620 Jr Project, Computer History Museum, 2017-2023
+ *  IBM 1620 Jr Project, Computer History Museum, 2017-2024
  *
  *  To recreate the experience (visual, auditory, tactile, visceral) of running historic software on a 1960s-era computer.
  *
@@ -132,7 +132,7 @@ public class SPSStatement {
 		statementTable.put("DDA",  new SPSStatement(StatementClass.DECLARATIVE, StatementType.DDA,         SPSData.SystemType.ANY,      0,  5, 0, 0, StatementListing.DATA));
 		statementTable.put("DGM",  new SPSStatement(StatementClass.DECLARATIVE, StatementType.DGM,         SPSData.SystemType.ANY,      0,  1, 0, 0, StatementListing.DATA));
 		statementTable.put("DNB",  new SPSStatement(StatementClass.DECLARATIVE, StatementType.DNB,         SPSData.SystemType.ANY,      0,  2, 0, 0, StatementListing.DATA));
-		statementTable.put("DOT",  new SPSStatement(StatementClass.DECLARATIVE, StatementType.DOT,     SPSData.SystemType.MODEL_2,      0,  2, 0, 0, StatementListing.DATA));
+		statementTable.put("DOT",  new SPSStatement(StatementClass.DECLARATIVE, StatementType.DOT,         SPSData.SystemType.MODEL_2,  0,  2, 0, 0, StatementListing.DATA));
 		statementTable.put("DS",   new SPSStatement(StatementClass.DECLARATIVE, StatementType.DS,          SPSData.SystemType.ANY,      0,  2, 0, 0, StatementListing.RESERVE_1));
 		statementTable.put("DSA",  new SPSStatement(StatementClass.DECLARATIVE, StatementType.DSA,         SPSData.SystemType.ANY,      0, 10, 0, 0, StatementListing.DATA));
 		statementTable.put("DSAC", new SPSStatement(StatementClass.DECLARATIVE, StatementType.DSAC,        SPSData.SystemType.ANY,      0,  3, 0, 0, StatementListing.DATA));
@@ -426,7 +426,7 @@ public class SPSStatement {
 				SPSData.labelAddress = (int)EvalOperand(SPSData.inputOperand[0], SPSData.lastAddress, false, true, StatementCheck.ADDRESS);
 				SPSData.addressCounter = SPSData.labelAddress;
 				SPSData.address = SPSData.labelAddress;
-				SPSData.lastAddress = SPSData.labelAddress;
+				SPSData.lastAddress = SPSData.labelAddress - 1;
 				if (SPSData.pass == 1) {
 					SPSSymbol.Add(SPSData.inputLabel, SPSData.labelAddress, SPSData.lineNumber);
 				} else {

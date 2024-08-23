@@ -3,7 +3,7 @@ package SPS1620;
 /*
  *  SPSData.java - global constants, data, and tables
  *
- *  IBM 1620 Jr Project, Computer History Museum, 2017-2023
+ *  IBM 1620 Jr Project, Computer History Museum, 2017-2024
  *
  *  To recreate the experience (visual, auditory, tactile, visceral) of running historic software on a 1960s-era computer.
  *
@@ -26,7 +26,7 @@ public class SPSData {
 
 	// Constants
 	
-	public static final String VERSION = "1.03";
+	public static final String VERSION = "1.04";
 	
 	public static final int SIZE_OP_TABLE     = 400;
 	public static final int SIZE_SOURCE_TABLE = 16;
@@ -252,6 +252,7 @@ public class SPSData {
 	public static int lineCount = 0;
 	public static int errorCount = 0;
 	public static int warningCount = 0;
+    public static int initialAddressCounter = 402;
 	public static int addressCounter = 0;
 	public static int lastAddress = 0;
 	public static char symbolHead = ' ';
@@ -276,4 +277,3 @@ public class SPSData {
 	
 	public static byte[] memory = new byte[memorySize];
 }
-

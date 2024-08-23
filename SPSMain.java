@@ -3,7 +3,7 @@ package SPS1620;
 /*
  *  SPSMain.java - main program and command-line processing
  *
- *  IBM 1620 Jr Project, Computer History Museum, 2017-2023
+ *  IBM 1620 Jr Project, Computer History Museum, 2017-2024
  *
  *  To recreate the experience (visual, auditory, tactile, visceral) of running historic software on a 1960s-era computer.
  *
@@ -84,6 +84,7 @@ public class SPSMain {
 		System.out.println("System type:         " + ((SPSData.systemType == SPSData.SystemType.MODEL_1) ? "model 1" : "model 2"));
 		System.out.println("Memory size:         " + SPSData.memorySize);
 		System.out.println("Include tables:      " + (SPSData.includeTables ? "yes" : "no"));
+		System.out.println("Initial address:     " + (SPSData.initialAddressCounter));
 		System.out.println("Load halt:           " + (SPSData.loadHalt ? "yes" : "no"));
 		System.out.println("Produce warnings:    " + (SPSData.produceWarnings ? "yes" : "no"));
 		System.out.println("Print pass 1 errors: " + (SPSData.pass1Errors ? "yes" : "no"));
@@ -183,6 +184,13 @@ public class SPSMain {
 				SPSData.includeTables = true;
 			} else if ((len == 9) && larg.equals("-notables")) {
 				SPSData.includeTables = false;
+
+			} else if ((len > 6) && larg.startsWith("-dorg=")) {
+				try {
+					SPSData.initialAddressCounter = Integer.parseInt(arg.substring(6));
+				} catch (NumberFormatException e) {
+					SPSOutput.ReportError("invalid dorg address (" + arg.substring(6) + ")");
+                }
 				
 			} else if ((len == 5) && larg.equals("-halt")) {
 				SPSData.loadHalt = true;
@@ -296,6 +304,8 @@ public class SPSMain {
 		
 		System.out.println("  -tables            - include arithmetic table(s) [default]");
 		System.out.println("  -notables          - do not include arithmetic table(s)\n");
+
+		System.out.println("  -dorg=<address>    - set initial address [default = 402]\n");
 		
 		System.out.println("  -halt              - generate a halt instruction at end of load [default]");
 		System.out.println("  -nohalt            - do not generate a halt at end of load\n");
